@@ -1,6 +1,6 @@
 # ADMaps Tools
 
-A toolbox for Foundry VTT v13, built for [Animated Dungeon Maps](https://www.patreon.com/c/animatedmaps) scenes and useful on any map:
+A toolbox for Foundry VTT v13, built for [Animated Dungeon Maps](https://admaps.cloud/) scenes and useful on any map:
 elevation regions (plateaus, stairs, water, transport), helpers for multi-floor scenes, roofs and doors, scene variations,
 batch scene import and a set of editing tools.
 

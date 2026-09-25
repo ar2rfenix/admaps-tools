@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.0
+- The author link now points to [admaps.cloud](https://admaps.cloud/).
+
 ## 0.2.9
 - First public release.
 - Worlds on other game systems: Alt+W no longer throws an error on scenes with regions, and three floor tools no longer
