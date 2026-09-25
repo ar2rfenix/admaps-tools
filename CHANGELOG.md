@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+- Update notice: when a newer ADMaps Tools release is out, the GM gets a window with both versions and how to update.
+  «Don't show again» hides it until the next release; the tool can be turned off in the module settings.
+
 ## 0.3.0
 - The author link now points to [admaps.cloud](https://admaps.cloud/).
 

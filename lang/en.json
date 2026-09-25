@@ -351,5 +351,13 @@
   "ADM_LEVELS.wallChain.regionMerged": "The outline was added to the region \"{name}\".",
   "ADM_LEVELS.wallChain.regionUndoCreate": "The new region was removed.",
   "ADM_LEVELS.wallChain.regionUndoMerge": "The outline was taken back from the region \"{name}\".",
-  "ADM_LEVELS.wallChain.regionFailed": "Could not build the region, see the console."
+  "ADM_LEVELS.wallChain.regionFailed": "Could not build the region, see the console.",
+  "ADM_LEVELS.settings.updateNotice.name": "Update notice",
+  "ADM_LEVELS.settings.updateNotice.hint": "When a newer ADMaps Tools release is out, the GM gets a window on load: the installed and the new version and how to update. «Don't show again» hides it until the next release.",
+  "ADM_LEVELS.updateNotice.title": "ADMaps Tools: update available",
+  "ADM_LEVELS.updateNotice.body": "A new version of ADMaps Tools is out: {latest}. You have {current}.",
+  "ADM_LEVELS.updateNotice.how": "To update, return to Setup, open Add-on Modules and update ADMaps Tools.",
+  "ADM_LEVELS.updateNotice.notes": "What's new",
+  "ADM_LEVELS.updateNotice.skip": "Don't show again",
+  "ADM_LEVELS.updateNotice.ok": "OK"
 }

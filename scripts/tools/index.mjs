@@ -53,6 +53,7 @@ import { TOOL as sceneFolderImport } from "./scene-folder-import.mjs";
 import { TOOL as sceneQuickExport } from "./scene-quick-export.mjs";
 import { TOOL as regionFromTile } from "./region-from-tile.mjs";
 import { TOOL as wallChainClick } from "./wall-chain-click.mjs";
+import { TOOL as updateNotice } from "./update-notice.mjs";
 // HIDDEN (the file tools/cinema.mjs is still in place, nothing deleted): no import → the module is not loaded,
 // the settings checkbox is not registered, onInit/onReady are not called. To restore = uncomment
 // this line AND the `cinema` entry in the TOOLS array below. Saved `cinema.*` values in the database
@@ -101,6 +102,7 @@ const TOOLS = [
   sceneQuickExport,
   regionFromTile,
   wallChainClick,
+  updateNotice,
   // hidden — see the commented-out import above; to restore = remove the «//» from the next line:
   // cinema,
 ];

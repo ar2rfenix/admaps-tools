@@ -100,6 +100,10 @@ switched off with the **Elevation regions** setting.
 - **Mass Edit mirroring** — fixes the ascent direction of mirrored plateaus and stairs.
 - **Region from tile** — traces a plateau region from a tile's opacity.
 
+### Module
+- **Update notice** — when a newer ADMaps Tools release is out, the GM gets a window with both versions and how to
+  update. «Don't show again» hides it until the next release.
+
 ## Languages
 
 English, Russian.

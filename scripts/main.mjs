@@ -12,7 +12,7 @@ import { panelFloor, wallOnFloor, regionOnFloor } from "./tools/floor-range.mjs"
 // Build marker: `__ADM_BUILD` in the console shows which code the client actually
 // loaded. Electron caches JS until a full re-login, and without the marker "not
 // fixed" is indistinguishable from "not reloaded".
-globalThis.__ADM_BUILD = Object.assign(globalThis.__ADM_BUILD ?? {}, { admLevels: "2026-09-25-1047" });
+globalThis.__ADM_BUILD = Object.assign(globalThis.__ADM_BUILD ?? {}, { admLevels: "2026-09-25-1125" });
 
 // Force fly.walls = "move" and swim.canSelect = true ASAP, before Foundry freezes CONFIG.
 // By default in v13 swim has canSelect=false, so tokenDoc.update({movementAction:"swim"})

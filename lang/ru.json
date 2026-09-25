@@ -351,5 +351,13 @@
   "ADM_LEVELS.wallChain.regionMerged": "Контур добавлен к региону «{name}».",
   "ADM_LEVELS.wallChain.regionUndoCreate": "Новый регион удалён.",
   "ADM_LEVELS.wallChain.regionUndoMerge": "Контур убран из региона «{name}».",
-  "ADM_LEVELS.wallChain.regionFailed": "Не удалось собрать регион, подробности в консоли."
+  "ADM_LEVELS.wallChain.regionFailed": "Не удалось собрать регион, подробности в консоли.",
+  "ADM_LEVELS.settings.updateNotice.name": "Окно об обновлении",
+  "ADM_LEVELS.settings.updateNotice.hint": "Когда выходит новая версия ADMaps Tools, ГМ при загрузке видит окно: какая версия стоит, какая вышла и как обновиться. «Не показывать больше» скрывает окно до следующей версии.",
+  "ADM_LEVELS.updateNotice.title": "ADMaps Tools: вышло обновление",
+  "ADM_LEVELS.updateNotice.body": "Вышла новая версия ADMaps Tools: {latest}. У вас стоит {current}.",
+  "ADM_LEVELS.updateNotice.how": "Чтобы обновиться, выйдите в меню Setup, откройте модули и обновите ADMaps Tools.",
+  "ADM_LEVELS.updateNotice.notes": "Что нового",
+  "ADM_LEVELS.updateNotice.skip": "Не показывать больше",
+  "ADM_LEVELS.updateNotice.ok": "ОК"
 }
