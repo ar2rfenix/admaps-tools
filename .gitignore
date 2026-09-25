@@ -1,0 +1,7 @@
+# OS and editor leftovers
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.zip

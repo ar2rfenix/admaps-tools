@@ -1,0 +1,70 @@
+.admfp-preview {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 999999;
+  pointer-events: none;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+.admfp-preview img,
+.admfp-preview video {
+  display: block;
+  max-width: 400px;
+  max-height: 400px;
+  object-fit: contain;
+}
+/* Time overlay (current / duration) on top of the video preview */
+.admfp-time {
+  position: absolute;
+  bottom: 4px;
+  right: 6px;
+  background: rgba(0,0,0,0.65);
+  color: #eee;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  padding: 1px 6px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+.admfp-sound-indicator {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 999999;
+  pointer-events: none;
+  background: rgba(15,15,20,0.9);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: #d7ac5e;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.admfp-sound-indicator i {
+  animation: admfp-pulse 1s infinite;
+}
+/* Recursive subfolder search: result list + hints */
+.admfp-deep-list {
+  border-top: 1px dashed rgba(216, 172, 94, 0.35);
+  margin-top: 2px;
+}
+.admfp-deep-list .admfp-deep .fa-file {
+  opacity: 0.6;
+}
+.admfp-deep-hint {
+  padding: 4px 8px;
+  opacity: 0.6;
+  font-style: italic;
+  font-size: 12px;
+  list-style: none;
+}
+@keyframes admfp-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}

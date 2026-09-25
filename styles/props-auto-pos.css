@@ -1,0 +1,22 @@
+/* ADMaps_PropsAutoPos — button in the Tile HUD */
+#tile-hud .control-icon[data-action="ADMaps_PropsAutoPos-align"] {
+  /* Slight difference from the stock buttons: golden accent */
+}
+#tile-hud .control-icon[data-action="ADMaps_PropsAutoPos-align"] i {
+  color: #f3c267;
+}
+#tile-hud .control-icon[data-action="ADMaps_PropsAutoPos-align"]:hover i {
+  color: #fff;
+  text-shadow: 0 0 6px rgba(243, 194, 103, 0.8);
+}
+#tile-hud .control-icon[data-action="ADMaps_PropsAutoPos-align"].is-running {
+  pointer-events: none;
+  opacity: 0.5;
+}
+#tile-hud .control-icon[data-action="ADMaps_PropsAutoPos-align"].is-running i {
+  animation: admaps-pap-spin 1s linear infinite;
+}
+@keyframes admaps-pap-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

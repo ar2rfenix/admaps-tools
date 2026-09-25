@@ -1,0 +1,128 @@
+/* Admaps Scene Switch */
+
+/* ── "Variations" hover submenu ── */
+.asw-submenu {
+  position: fixed;
+  z-index: 1000000;
+  min-width: 200px;
+  max-width: 340px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 4px;
+  margin: 0;
+  background: #1b1c22;
+  border: 1px solid #000;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+  color: #e7e7e7;
+  font-size: 13px;
+}
+.asw-submenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.asw-submenu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.asw-submenu-item i { width: 16px; text-align: center; opacity: 0.85; }
+.asw-submenu-item span { overflow: hidden; text-overflow: ellipsis; }
+.asw-submenu-item:hover { background: #5e0000; color: #fff; }
+.asw-submenu-item.asw-active { color: #ffd27a; }
+.asw-submenu-item.asw-active::after {
+  content: "\f00c"; /* check */
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro";
+  font-weight: 900;
+  margin-left: auto;
+  font-size: 11px;
+  opacity: 0.8;
+}
+.asw-submenu-item.asw-config { color: #9fd0ff; }
+.asw-submenu-sep {
+  height: 1px;
+  margin: 4px 6px;
+  background: rgba(255, 255, 255, 0.15);
+}
+.asw-submenu-empty {
+  padding: 5px 10px;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* ── Settings dialog (minimal) ── */
+.asw-config { display: flex; flex-direction: column; gap: 8px; }
+
+.asw-config .asw-orig {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  opacity: 0.85;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-border-dark, rgba(255, 255, 255, 0.12));
+}
+.asw-config .asw-orig b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.asw-config .asw-orig .asw-pick { margin-left: auto; }
+
+.asw-vars { display: flex; flex-direction: column; gap: 6px; }
+
+.asw-var-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.asw-var-row .asw-var-drag {
+  flex: 0 0 auto;
+  cursor: grab;
+  opacity: 0.5;
+  padding: 0 2px;
+  user-select: none;
+  font-size: 14px;
+  line-height: 1;
+}
+.asw-var-row .asw-var-drag:hover { opacity: 0.9; }
+.asw-var-row.asw-dragging { opacity: 0.45; }
+.asw-config .asw-orig .asw-orig-name { flex: 1 1 auto; min-width: 0; }
+.asw-var-row .asw-var-name { flex: 22 1 0; min-width: 0; box-sizing: border-box; }
+.asw-var-row .asw-var-file {
+  flex: 68 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-sizing: border-box;
+}
+.asw-var-row .asw-var-path { flex: 1 1 auto; min-width: 0; }
+.asw-var-row .asw-del { flex: 10 1 0; min-width: 0; color: #c0392b; }
+
+/* compact icon buttons */
+.asw-config .asw-pick,
+.asw-config .asw-del,
+.asw-config .asw-add {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 6px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.asw-var-row .asw-var-file .asw-pick { flex: 0 0 auto; }
+
+.asw-config .asw-add {
+  align-self: center;
+  width: 40px;
+  margin-top: 2px;
+}

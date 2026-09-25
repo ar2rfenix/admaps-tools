@@ -1,0 +1,56 @@
+{
+  "id": "adm-levels",
+  "title": "ADMaps Tools",
+  "description": "Elevation regions (plateaus, stairs, water, transport), multi-floor helpers for Levels, roofs and doors, scene variations, batch scene import and editing tools. Every tool can be toggled in the module settings.",
+  "version": "0.2.9",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13.351",
+    "maximum": "13"
+  },
+  "authors": [
+    {
+      "name": "ADMaps",
+      "url": "https://www.patreon.com/c/animatedmaps"
+    }
+  ],
+  "url": "https://github.com/ar2rfenix/admaps-tools",
+  "manifest": "https://github.com/ar2rfenix/admaps-tools/releases/latest/download/module.json",
+  "download": "https://github.com/ar2rfenix/admaps-tools/releases/download/v0.2.9/adm-levels.zip",
+  "bugs": "https://github.com/ar2rfenix/admaps-tools/issues",
+  "readme": "https://github.com/ar2rfenix/admaps-tools/blob/main/README.md",
+  "changelog": "https://github.com/ar2rfenix/admaps-tools/blob/main/CHANGELOG.md",
+  "license": "LICENSE",
+  "relationships": {
+    "requires": [
+      { "id": "lib-wrapper", "type": "module" }
+    ],
+    "recommends": [
+      { "id": "levels", "type": "module", "reason": "Multi-floor tools: floor panel, ghosts, effects on own floor, descent, stairs." },
+      { "id": "wall-height", "type": "module", "reason": "Floor-aware walls: wall filter by floor, walls tested at waypoint elevation." },
+      { "id": "betterroofs", "type": "module", "reason": "Roof fog fix and roof links on hover." }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/tile-control.css",
+    "styles/props-auto-pos.css",
+    "styles/scene-flip.css",
+    "styles/admaps-scene-switch.css",
+    "styles/file-preview.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "ru",
+      "name": "Русский",
+      "path": "lang/ru.json"
+    }
+  ]
+}

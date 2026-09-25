@@ -1,0 +1,137 @@
+/* ADMaps Tile Control — panel styles. Prefix: admtc-. */
+
+#admaps-tile-control .window-content {
+  background: rgba(0, 0, 0, 0.42);
+  padding: 0;
+  color: #f5deb3;
+  overflow: hidden;
+}
+
+.admtc-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.admtc-searchbar {
+  display: flex;
+  gap: 4px;
+  margin: 6px;
+  flex: 0 0 auto;
+}
+
+.admtc-search {
+  color: var(--color-text-light-1, #eee);
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.admtc-clear {
+  flex: 0 0 auto;
+  width: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.admtc-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 6px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  align-content: start;
+}
+
+/* Tile cell: a square with the image and a name overlay at the bottom. */
+.admtc-row {
+  position: relative;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  background: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  transition: background-color 0.15s ease-in-out, outline-color 0.15s ease-in-out;
+}
+
+.admtc-row.is-dimmed { display: none; }
+
+.admtc-row.is-controlled {
+  outline-color: #4cc2ff;
+  background: rgba(76, 194, 255, 0.18);
+}
+
+.admtc-row:hover,
+.admtc-row.is-hover { background: rgba(255, 255, 255, 0.12); }
+
+.admtc-media {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Name — small text overlaid at the bottom of the image. */
+.admtc-name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 11px;
+  line-height: 1.2;
+  padding: 2px 4px;
+  background: rgba(0, 0, 0, 0.62);
+  color: #f5deb3;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Index (sort / z-order) — small badge in the top-right corner. */
+.admtc-index {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 10px;
+  line-height: 1;
+  padding: 2px 4px;
+  background: rgba(0, 0, 0, 0.62);
+  color: #f5deb3;
+  border-bottom-left-radius: 4px;
+}
+
+/* Right-click context menu (Mass Edit integration). */
+.admtc-ctx {
+  position: fixed;
+  z-index: 100000;
+  background: #1b1b1b;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  padding: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.admtc-ctx-item {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: #f5deb3;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.admtc-ctx-item:hover { background: rgba(255, 255, 255, 0.12); }

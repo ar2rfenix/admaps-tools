@@ -1,0 +1,35 @@
+/* ADMaps Scene Flip */
+
+/* Hover submenu opened from the scene navigation context entry. */
+.asf-submenu {
+  position: fixed;
+  z-index: 1000000;
+  min-width: 190px;
+  max-width: 280px;
+  padding: 4px;
+  margin: 0;
+  background: #1b1c22;
+  border: 1px solid #000;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+  color: #e7e7e7;
+  font-size: 13px;
+}
+.asf-submenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.asf-submenu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.asf-submenu-item i { width: 16px; text-align: center; opacity: 0.85; }
+.asf-submenu-item:hover { background: #5e0000; color: #fff; }
+.asf-submenu-item.asf-reset { color: #ffb38a; }
+.asf-submenu-sep { height: 1px; margin: 4px 6px; background: rgba(255, 255, 255, 0.15); }
