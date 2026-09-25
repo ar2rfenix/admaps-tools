@@ -1,0 +1,64 @@
+# Sends every published GitHub release to the Foundry VTT package listing (Package Release API,
+# https://foundryvtt.com/article/package-release-api/). The token comes from the repository secret
+# FOUNDRY_RELEASE_TOKEN and never appears in the log.
+# Manual run (Actions → Run workflow): pick a tag; «dry run» only validates, nothing is published.
+
+name: Publish to Foundry package listing
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag, e.g. v0.3.1"
+        required: true
+      dry_run:
+        description: "Only validate, do not publish"
+        type: boolean
+        default: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read the release manifest
+        id: meta
+        env:
+          TAG: ${{ github.event.release.tag_name || inputs.tag }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          url="https://github.com/${REPO}/releases/download/${TAG}/module.json"
+          curl -sSfL "$url" -o module.json
+          version=$(jq -r .version module.json)
+          # The listing installs from this manifest, so it must be the one of this very tag.
+          [ "v${version}" = "${TAG}" ] || { echo "module.json says ${version}, the tag is ${TAG}"; exit 1; }
+          echo "manifest=${url}" >> "$GITHUB_OUTPUT"
+
+      - name: Send the release to foundryvtt.com
+        env:
+          TOKEN: ${{ secrets.FOUNDRY_RELEASE_TOKEN }}
+          TAG: ${{ github.event.release.tag_name || inputs.tag }}
+          REPO: ${{ github.repository }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+          MANIFEST: ${{ steps.meta.outputs.manifest }}
+        run: |
+          set -euo pipefail
+          body=$(jq -n \
+            --arg id "$(jq -r .id module.json)" \
+            --arg version "$(jq -r .version module.json)" \
+            --arg manifest "${MANIFEST}" \
+            --arg notes "https://github.com/${REPO}/releases/tag/${TAG}" \
+            --arg min "$(jq -r '.compatibility.minimum // ""' module.json)" \
+            --arg ver "$(jq -r '.compatibility.verified // ""' module.json)" \
+            --arg max "$(jq -r '.compatibility.maximum // ""' module.json)" \
+            --argjson dry "${DRY_RUN}" \
+            '{id: $id, "dry-run": $dry,
+              release: {version: $version, manifest: $manifest, notes: $notes,
+                        compatibility: ({minimum: $min, verified: $ver} + (if $max == "" then {} else {maximum: $max} end))}}')
+          echo "Sending: $(echo "${body}" | jq -c .)"
+          [ -n "${TOKEN}" ] || { echo "The FOUNDRY_RELEASE_TOKEN secret is not set"; exit 1; }
+          curl -sS --fail-with-body -X POST "https://foundryvtt.com/_api/packages/release_version/" \
+            -H "Content-Type: application/json" -H "Authorization: ${TOKEN}" -d "${body}"
+          echo
